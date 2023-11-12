@@ -1,0 +1,309 @@
+/* グリッドレイアウトを使った全体のコンテナのスタイル */
+#desk-situation {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7つの列を作成 */
+  grid-template-rows: auto; /* コンテンツに基づく行の高さ */
+  grid-gap: 3px; /* グリッド項目の間隔 */
+  max-width: 100%;
+  margin: auto;
+  border: solid 1px black;
+  padding: 10px;
+  background-color: #fffce1; /* オフホワイトの黄色 */
+}
+
+/* 時刻とタイトルのスタイル */
+.time, h2 {
+  grid-column: 1 / -1; /* 全ての列にまたがる */
+  text-align: center; /* テキストを中央に配置 */
+}
+
+/* Desk1の個別スタイル */
+#desk1 {
+  grid-column: 1 / 5; /* 最初の4列をDesk1が占める */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3列 */
+  grid-template-rows: repeat(2, 1fr); /* 2行 */
+  justify-items: center; /* アイテムを水平方向に中央に配置 */
+  align-items: center; /* アイテムを垂直方向に中央に配置 */
+  background-color: rgb(253, 245, 237); /* ライトベージュで白に近い背景色を設定 */
+  border-radius: 40px; /* 丸みを増減させるための値を調整 */
+  padding: 10px;
+  border: solid 1px black;
+  margin-bottom: 20px; /* デスクの下のスペース */
+}
+
+/* Desk2の個別スタイル */
+#desk2 {
+  grid-column: 5 / 8; /* 次の3列をDesk2が占める */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2列 */
+  grid-template-rows: repeat(2, 1fr); /* 2行 */
+  justify-items: center; /* アイテムを水平方向に中央に配置 */
+  align-items: center; /* アイテムを垂直方向に中央に配置 */
+  background-color: rgb(255, 253, 251); /* ライトベージュで白に近い背景色を設定 */
+  border-radius: 5px; /* 丸みを増減させるための値を調整 */
+  padding: 10px;
+  border: solid 1px black;
+  margin-bottom: 20px; /* デスクの下のスペース */
+}
+
+/* Desk3の個別スタイル */
+#desk3 {
+  grid-column: 1 / 8; /* 全ての7列にまたがるDesk3 */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4列 */
+  grid-template-rows: repeat(2, 1fr); /* 2行 */
+  justify-items: center; /* アイテムを水平方向に中央に配置 */
+  align-items: center; /* アイテムを垂直方向に中央に配置 */
+  background-color: rgb(255, 253, 251); /* ライトベージュで白に近い背景色を設定 */
+  border-radius: 5px; /* 丸みを増減させるための値を調整 */
+  padding: 10px;
+  border: solid 1px black;
+  margin-bottom: 10px; /* デスクの下のスペース */
+}
+
+/* ユーザーサークルのスタイル */
+.user {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 0.8em;
+}
+
+/* ボタン背景 */
+.absent {
+  background-color: red;
+}
+.present {
+  background-color: green;
+}
+
+/* ボタンエリアのスタイル */
+#press-button {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.status-button {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  flex-grow: 1;
+  margin: 0 5px;
+  text-align: center;
+}
+
+/* absentボタンのスタイル */
+#absent-button {
+  background-color: red;
+  color: white; /* テキストの色を白に設定 */
+}
+
+/* presentボタンのスタイル */
+#present-button {
+  background-color: green;
+  color: white; /* テキストの色を白に設定 */
+}
+
+/* 選択された状態のスタイル */
+.selected {
+  border: 5px solid black;
+  font-size: 20px; /* フォントサイズを16ピクセルに設定 */
+}
+
+/* ログイン/ログアウトボタンコンテナのスタイル */
+#login-logout {
+  display: flex; /* レイアウトにflexboxを使用 */
+  justify-content: center; /* ボタンを水平方向に中央に配置 */
+  margin-bottom: 20px; /* ボタンの下にスペースを追加 */
+}
+
+/* ログインボタンのスタイル */
+#login-button {
+  background-color: #87CEEB; /* 画像に似たソフトブルーの色 */
+  color: white; /* テキストの色を白に */
+  border: none; /* 境界線なし */
+  border-radius: 20px; /* 角を丸く */
+  padding: 10px 30px; /* テキストの周りのパッディング */
+  margin-right: 10px; /* ボタン間のスペース */
+  cursor: pointer; /* ホバー時にカーソルをポインターに変更 */
+  font-size: 1em; /* フォントサイズを設定 */
+  outline: none; /* フォーカスアウトラインを削除 */
+}
+
+/* ログアウトボタンのスタイル */
+#logout-button {
+  background-color: #FA8072; /* 画像に似たソフトレッドの色 */
+  color: white; /* テキストの色を白に */
+  border: none; /* 境界線なし */
+  border-radius: 20px; /* 角を丸く */
+  padding: 10px 30px; /* テキストの周りのパッディング */
+  cursor: pointer; /* ホバー時にカーソルをポインターに変更 */
+  font-size: 1em; /* フォントサイズを設定 */
+  outline: none; /* フォーカスアウトラインを削除 */
+}
+
+/* 両ボタン共通のスタイル */
+#login-button, #logout-button {
+  transition: background-color 0.3s ease; /* ボタン背景色の遷移 */
+}
+
+/* ボタンホバー効果のスタイル */
+#login-button:hover {
+  background-color: #6495ED; /* ホバー時に青の濃い陰影 */
+}
+
+#logout-button:hover {
+  background-color: #e94e1a; /* ホバー時に赤の濃い陰影 */
+}
+
+/* 選択ボタンのスタイル */
+#select-button {
+  background-color: #f0e68c; /* 画像に似た優しい黄色 */
+  color: black; /* 黒のテキスト色 */
+  border: none; /* 枠線なし */
+  border-radius: 20px; /* 角を丸くする */
+  padding: 10px 30px; /* テキストの周りの余白 */
+  margin-right: 10px; /* ボタン間の間隔 */
+  cursor: pointer; /* ホバー時にカーソルをポインタに変更 */
+  font-size: 1em; /* フォントサイズを設定 */
+  outline: none; /* フォーカス時のアウトラインを消す */
+  transition: background-color 0.3s ease; /* 背景色の変化にトランジションを設定 */
+}
+
+/* 選択ボタンのホバーエフェクトのスタイル */
+#select-button:hover {
+  background-color: #ffd700; /* ホバー時により濃い黄色 */
+}
+
+/* クリックされた状態のスタイル */
+.clicked {
+  filter: brightness(0.75); /* 明るさを下げる */
+  border-width: 2px; /* 枠線を太くする */
+  font-weight: bold; /* フォントを太くする */
+  box-shadow: 0 0 0 2px black inset; /* 文字の周りに枠線を追加 */
+}
+
+/* ボタンがクリックされた後、一時的なスタイルが戻るトランジション */
+.status-button.clicked,
+#login-button.clicked,
+#logout-button.clicked,
+#select-button.clicked {
+  transition: filter 0.3s ease, border-width 0.3s ease, font-weight 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 「User: 」ラベルのスタイル */
+#user-label {
+  text-align: center; /* テキストを中央に配置 */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* 表のタイトルとボタンを含むコンテナのスタイル */
+.attendance-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* LoadとDeleteボタンのスタイル */
+#load-button, #delete-button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 5px;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+#load-button {
+  background-color: #6495ED; /* Loadボタンは青色 */
+}
+
+#load-button:hover {
+  background-color: #4169E1; /* ホバーで少し濃い青色に */
+}
+
+#delete-button {
+  background-color: #FA8072; /* Deleteボタンはサーモン色 */
+}
+
+#delete-button:hover {
+  background-color: #E9967A; /* ホバーで少し濃いサーモン色に */
+}
+
+/* 出席・欠席データ表のスタイリング */
+#attendance-data {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#attendance-table {
+  margin: auto;
+  width: 80%;
+  border-collapse: collapse;
+}
+
+#attendance-table th, #attendance-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#attendance-table th {
+  background-color: #f2f2f2;
+}
+
+/* 行のホバー効果 */
+#attendance-table tr:hover {background-color: #ddd;}
+
+/* スマホ用のスタイル: 画面幅が小さい場合の調整 */
+@media screen and (max-width: 768px) {
+  /* ログインボタンのスタイル調整 */
+  #login-button {
+    font-size: 1.2em; /* フォントサイズを大きく */
+    padding: 15px 40px; /* パディングを増やしてタップしやすく */
+    margin: 10px 5px; /* 余白を調整 */
+  }
+
+  /* ログアウトボタンのスタイル調整 */
+  #logout-button {
+    font-size: 1.2em; /* フォントサイズを大きく */
+    padding: 15px 40px; /* パディングを増やしてタップしやすく */
+    margin: 10px 5px; /* 余白を調整 */
+  }
+
+  /* 選択ボタンのスタイル調整 */
+  #select-button {
+    font-size: 1.2em; /* フォントサイズを大きく */
+    padding: 15px 40px; /* パディングを増やしてタップしやすく */
+    margin: 10px 5px; /* 余白を調整 */
+  }
+
+    /* Loadボタンのスタイル調整 */
+    #load-button {
+      font-size: 1.2em; /* フォントサイズを大きく */
+      padding: 15px 25px; /* パディングを増やしてタップしやすく */
+      margin: 10px 5px; /* 余白を調整 */
+    }
+  
+    /* Deleteボタンのスタイル調整 */
+    #delete-button {
+      font-size: 1.2em; /* フォントサイズを大きく */
+      padding: 15px 25px; /* パディングを増やしてタップしやすく */
+      margin: 10px 5px; /* 余白を調整 */
+    }
+}
